@@ -1,0 +1,15 @@
+.Field
+    @apply relative w-full flex flex-col gap-2 
+    &__label
+        @apply text-sm pl-3
+    &__wrapper
+        @apply relative w-full
+        &__input
+            @apply w-full border border-solid border-neutral-2 p-3 px-8 outline-none rounded-full bg-secondary text-white placeholder:text-neutral-2
+        &__mainIcon
+            @apply absolute left-3 top-[13px]
+        &__showPassword
+            @apply absolute right-3 top-[13px] border-none
+            background: none
+    &__error
+        @apply pl-3 text-error font-medium text-xs
