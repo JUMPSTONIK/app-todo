@@ -18,7 +18,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## Rapptr Challenge Explanation
+## Challenge Explanation
 * project setup - 2h
 	In the first phase of the challenge, I took time at the following points:
     * creation of folders and files structure: I Applied the modularity design patter to organize the different components. I used in the components and view a index.ts file as a proxy to have cleaner imports. I separated in different folders and file to follow de SOLID and DRY principals to have a cleaner code too and of the best quality. 
