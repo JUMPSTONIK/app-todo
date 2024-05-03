@@ -1,14 +1,5 @@
 'use client'
-import { SyntheticEvent } from "react";
 import styles from "./Button.module.sass"
-
-interface ButtonProps{
-    type?: 'button' | 'submit'
-    style?: 'primary'  | 'secondary';
-    children: string  | React.ReactElement;
-    isDisabled?: boolean
-    handleClick?:  (event ?: SyntheticEvent) => void
-}
 
 export const Button = (props: ButtonProps) =>{
     const { children, style = 'primary', type = 'button', isDisabled = false, handleClick } = props

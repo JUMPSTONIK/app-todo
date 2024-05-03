@@ -1,6 +1,6 @@
 
 import { validateToken } from "@/action"
-import { TodoView } from "@/components/todo"
+import { TodoView } from "@/components/todos"
 import { redirect } from "next/navigation"
 
 export default async function Todos(){

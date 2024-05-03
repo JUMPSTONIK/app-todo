@@ -1,7 +1,7 @@
 'use client'
 import { Button } from "@/components/shared/Button";
 import { Input } from "@/components/shared/Input";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import styles from "./LoginView.module.sass"
 import { emailPattern } from "@/utils/patterns";
 import { handleLogin } from "@/action";
@@ -36,6 +36,7 @@ export const LoginView = () => {
     };
     const formData = new FormData(event.target)
     const response = await handleLogin(formData)
+    window.localStorage.setItem('user', email)
     setError(response)
     setIsSubmitting(false)
   };

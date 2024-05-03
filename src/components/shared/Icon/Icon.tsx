@@ -5,10 +5,6 @@ import { FaUser, FaRegEdit } from "react-icons/fa";
 import { IoIosSearch } from "react-icons/io";
 import { MdDelete } from "react-icons/md";
 
-interface IconProps{
-    type?: string
-}
-
 const iconMap: { [key: string]: ReactElement } = {
     email: <FaUser/>,
     password:  <TbPasswordUser />,

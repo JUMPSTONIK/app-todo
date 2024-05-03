@@ -3,24 +3,10 @@ import { ChangeEvent, useState } from "react";
 import styles from "./Input.module.sass";
 import { Icon } from "../Icon";
 
-interface InputProps {
-  type?: "text" | "password" | "email";
-  iconName?: "email" | "password" | "search";
-  name: string;
-  value: string;
-  placeHolder: string;
-  label?: string;
-  minLength?: number;
-  maxLength?: number;
-  errorMessage?: string;
-  isValid?: boolean;
-  handleOnChange: (event: ChangeEvent<HTMLInputElement>) => void;
-}
-
 export const Input = (props: InputProps) => {
   const {
     type = "text",
-    iconName,
+    iconName = "",
     value,
     name,
     placeHolder,
@@ -51,36 +37,41 @@ export const Input = (props: InputProps) => {
   };
 
   const showErrorMessage = () => {
-    return errorMessage.length && wasTouched && !isValid;
+    return errorMessage && wasTouched && !isValid;
   };
 
   return (
     <div className={styles.Field}>
-      {label && <label className={styles.Field__label} htmlFor={name}>
-        {label}
-      </label>}
-      <div className={styles.Field__wrapper}>
-
-      <input
-        className={styles.Field__wrapper__input}
-        onChange={(event) => handleOnChange(event)}
-        onBlur={() => setWasTouched(true)}
-        placeholder={placeHolder}
-        type={inputType}
-        value={value}
-        id={name}
-        name={name}
-        minLength={minLength}
-        maxLength={maxLength}
-      />
-      <div className={styles.Field__wrapper__mainIcon} onClick={showPassword}>
-        <Icon type={iconName} />
-      </div>
-      {type === "password" && (
-        <button type="button" className={styles.Field__wrapper__showPassword} onClick={showPassword}>
-          <Icon type={getToggleIcon()} />
-        </button>
+      {label && (
+        <label className={styles.Field__label} htmlFor={name}>
+          {label}
+        </label>
       )}
+      <div className={styles.Field__wrapper}>
+        <input
+          className={styles.Field__wrapper__input}
+          onChange={(event) => handleOnChange(event)}
+          onBlur={() => setWasTouched(true)}
+          placeholder={placeHolder}
+          type={inputType}
+          value={value}
+          id={name}
+          name={name}
+          minLength={minLength}
+          maxLength={maxLength}
+        />
+        <div className={styles.Field__wrapper__mainIcon} onClick={showPassword}>
+          <Icon type={iconName} />
+        </div>
+        {type === "password" && (
+          <button
+            type="button"
+            className={styles.Field__wrapper__showPassword}
+            onClick={showPassword}
+          >
+            <Icon type={getToggleIcon()} />
+          </button>
+        )}
       </div>
       {showErrorMessage() && (
         <p className={styles.Field__error}>{errorMessage}</p>
