@@ -16,6 +16,8 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+create a .env file and this, please to make the project work: RAPPTR_HOST="http://dev.rapptrlabs.com/"
+
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 ## Challenge Explanation
@@ -47,3 +49,7 @@ I handled user session verification mainly on the server-side. I converted the L
 * I would have also loved to add a loading.tsx component to display a loader and thus improve the user experience while the request is completed and redirected to the view for everyone, since Next.js gives us this functionality natively.
 * Implementing a global store would have been an excellent addition. In the end, I decided not to add it to the challenge, as having a good composition can lead to less reliance on a global state. However, for a project that may grow and need to scale, it would be necessary. I would even recommend the implementation and use of the Zustand library, as it has excellent integration with Next.js, follows the Flux pattern like Redux, but with a much more friendly syntax like Pinia from Vue.js.
 * I would have also loved to go a little further and encrypt the session token for greater security. I know that handling the accessToken was not considered essential, but I did store it in a cookie and validated its existence, but it is not fully protected. That is why encrypting the token at some point when I execute the action server for the login would have been ideal and that I would have loved to implement for greater security and best practices. In addition, I would have loved to verify the token after its expiration date and that the new token is queried from the server side and saved.
+
+I hope you enjoy the final result. I would have loved to have dockerized the app, deployed it to Vercel to see the project running online, and added unit testing to ensure the quality and robustness of the code. However, due to time constraints and a very busy week, I was unable to add these extras to make the challenge as close to a real project as possible.
+
+
